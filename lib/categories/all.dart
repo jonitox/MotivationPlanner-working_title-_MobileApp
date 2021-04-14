@@ -13,6 +13,7 @@ class ALL extends StatefulWidget {
 class _ALLState extends State<ALL> with AutomaticKeepAliveClientMixin<ALL> {
   @override
   bool get wantKeepAlive => true;
+
   @override
   void initState() {
     print('init!');
