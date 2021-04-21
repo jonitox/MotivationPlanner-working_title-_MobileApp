@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 
 import './screens/home_screen.dart';
 import './screens/planner_screen.dart';
@@ -17,6 +19,16 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => Goals(),
       child: MaterialApp(
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          SfGlobalLocalizations.delegate
+        ],
+        supportedLocales: [
+          const Locale('en'),
+          const Locale('ko'),
+        ],
+        locale: const Locale("ko"),
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(

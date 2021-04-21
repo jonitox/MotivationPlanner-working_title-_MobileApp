@@ -5,64 +5,55 @@ import '../providers/goals.dart';
 
 import '../models/goal.dart';
 
-class ALL extends StatefulWidget {
+class AllStyle extends StatefulWidget {
   @override
   _ALLState createState() => _ALLState();
 }
 
-class _ALLState extends State<ALL> with AutomaticKeepAliveClientMixin<ALL> {
+class _ALLState extends State<AllStyle>
+    with AutomaticKeepAliveClientMixin<AllStyle> {
   @override
   bool get wantKeepAlive => true;
 
   @override
   void initState() {
-    print('init!');
     super.initState();
   }
 
   Widget goalBox(Goal goal) {
     return Container(
       decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(color: Colors.grey),
+          ],
           borderRadius: BorderRadius.circular(10),
           color: HexColor.colorList[goal.colorIdx]),
       padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.all(3),
       child: Column(
         children: [
-          Text(goal.dueDate.toString()),
-          Text(goal.content),
+          Text("D-${goal.dueDate.difference(DateTime.now()).inDays}"), // d-day
+          Text(goal.dueDate.toString()), // 기한
+          Text(goal.content), // 내용
         ],
       ),
     );
   }
 
-  bool tag = false;
   @override
   Widget build(BuildContext context) {
-    final goals = Provider.of<Goals>(context).items;
-
-    return Column(
-      children: [
-        ElevatedButton(
-            onPressed: () {
-              setState(() {
-                print(tag);
-                tag = !tag;
-              });
-            },
-            child: Text('클릭!')),
-        Container(
-          height: 100,
-          width: 100,
-          color: tag ? Colors.blue : Colors.red,
-        )
-      ],
+    final goalList = Provider.of<Goals>(context).items;
+    final deviceSize = MediaQuery.of(context).size;
+    return GridView.builder(
+      key: PageStorageKey<String>("allview"),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        childAspectRatio: 0.8,
+        crossAxisSpacing: deviceSize.width * 0.01,
+        mainAxisSpacing: deviceSize.height * 0.01,
+      ),
+      itemCount: goalList.length,
+      itemBuilder: (ctx, i) => goalBox(goalList[i]),
     );
-
-    // return GridView.builder(
-    //   gridDelegate:
-    //       SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-    //   itemCount: goals.length,
-    //   itemBuilder: (ctx, i) => goalBox(goals[i]),
-    // );
   }
 }

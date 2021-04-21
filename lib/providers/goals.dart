@@ -14,7 +14,7 @@ class Goals with ChangeNotifier {
     Goal(
       id: '2',
       content: '영어 회화배우기',
-      dueDate: DateTime(2021, 4, 30, 18, 0),
+      dueDate: DateTime(2021, 4, 25, 18, 0),
       colorIdx: 1,
     ),
     Goal(
@@ -38,6 +38,23 @@ class Goals with ChangeNotifier {
   List<Goal> get getSortedByDate {
     List<Goal> ret = [...items];
     ret.sort((a, b) => a.dueDate.isBefore(b.dueDate) ? -1 : 1);
+    return ret;
+  }
+
+  Map<int, Map<int, List<Goal>>> get monthlyGoalsGroupedByYear {
+    Map<int, Map<int, List<Goal>>> ret = {};
+    _items.forEach((g) {
+      int year = g.dueDate.year;
+      int month = g.dueDate.month;
+      if (!ret.containsKey(year)) {
+        ret[year] = {};
+      }
+      if (!ret[year].containsKey(month)) {
+        ret[year][month] = [];
+      }
+      ret[year][month].add(g);
+    });
+
     return ret;
   }
 }

@@ -19,7 +19,7 @@ class Goal {
 
 class HexColor extends Color {
   static List<Color> colorList = [
-    Color(0xFFFFFFFF),
+    Colors.grey,
     Color(0xFFE7E746),
     Color(0xFF3997EA),
   ];

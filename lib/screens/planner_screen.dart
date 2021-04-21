@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../categories/all.dart';
+import '../categories/day.dart';
+import '../categories/month.dart';
 
 class PlannerScreen extends StatefulWidget {
   static const routeName = '/planner_screen';
@@ -13,7 +15,9 @@ class _PlannerScreenState extends State<PlannerScreen> {
   int selectedStyle = 0;
 
   final List<Widget> bodyStyles = [
-    ALL(),
+    AllStyle(),
+    DayStyle(PageStorageKey<String>("calendar")),
+    MonthStyle(),
     Center(
       child: Text('hi'),
     )
