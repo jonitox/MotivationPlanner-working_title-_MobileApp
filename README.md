@@ -10,5 +10,6 @@
 - 푸시 알림 및 그동안의 목표수행기록을 저장하기 위한, 서버 구현(FireBase 사용예정)
 
 ## memo    
+- 모든 style page의 state 유지.
 - month style: 지나간달 black-out     
 - 지나간 목표는 따로 볼 수 있게.
