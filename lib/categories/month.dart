@@ -57,7 +57,7 @@ class MonthStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final monthlyGoalsByYear =
-        Provider.of<Goals>(context).monthlyGoalsGroupedByYear;
+        Provider.of<Goals>(context).getMonthlyGoalsGroupedByYear;
     final deviceSize = MediaQuery.of(context).size;
     final thisYear = DateTime.now().year;
 

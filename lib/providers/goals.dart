@@ -41,7 +41,19 @@ class Goals with ChangeNotifier {
     return ret;
   }
 
-  Map<int, Map<int, List<Goal>>> get monthlyGoalsGroupedByYear {
+  Map<int, List<Goal>> get getYearlyGoals {
+    Map<int, List<Goal>> ret = {};
+    _items.forEach((g) {
+      int year = g.dueDate.year;
+      if (!ret.containsKey(year)) {
+        ret[year] = [];
+      }
+      ret[year].add(g);
+    });
+    return ret;
+  }
+
+  Map<int, Map<int, List<Goal>>> get getMonthlyGoalsGroupedByYear {
     Map<int, Map<int, List<Goal>>> ret = {};
     _items.forEach((g) {
       int year = g.dueDate.year;
