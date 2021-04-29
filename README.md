@@ -5,12 +5,13 @@
 
 
 ## To develop       
-- 계획연장 기능
-- 테마색상별 모아보기
-- 푸시 알림 및 그동안의 목표수행기록을 저장하기 위한, 서버 구현(FireBase 사용예정)
+- 계획연장 기능     
+- 테마색상별 모아보기    
+- 푸시 알림 및 그동안의 목표수행기록 등 백업을 위한, 서버 구현(FireBase, FCM 예정)      
 
 ## memo    
-- 통계화면 따로   
-- 모든 style page의 state 유지.
-- month style: 지나간달 black-out     
+- 통계 별도페이지 구현.  
+- 모든 style page의 state 유지.      
+- month style의 지나간달 black-out처리     
 - 지나간 목표는 따로 볼 수 있게.
+- 알림 주기 설정      
