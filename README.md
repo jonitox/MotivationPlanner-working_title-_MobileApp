@@ -10,7 +10,7 @@
 - 푸시 알림 및 그동안의 목표수행기록 등 백업을 위한, 서버 구현(FireBase, FCM 예정)      
 
 ## memo    
-- 통계 별도페이지 구현.  
+- 통계페이지 별도로 구현.  
 - 모든 style page의 state 유지.      
 - month style의 지나간달 black-out처리     
 - 지나간 목표는 따로 볼 수 있게.
