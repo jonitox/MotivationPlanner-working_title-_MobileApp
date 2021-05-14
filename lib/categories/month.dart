@@ -45,7 +45,7 @@ class MonthStyle extends StatelessWidget {
         Expanded(
           child: GridView(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+              crossAxisCount: 4,
             ),
             children: gridBoxes,
           ),
