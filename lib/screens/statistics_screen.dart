@@ -8,7 +8,7 @@ class StatisticsScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Container(
         child: Center(
-          child: Text("hi"),
+          child: Text("abc"),
         ),
       ),
     );
