@@ -1,3 +1,4 @@
+import 'package:demo_planner/screens/statistics_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -5,6 +6,7 @@ import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 
 import './screens/home_screen.dart';
 import './screens/planner_screen.dart';
+import './screens/statistics_screen.dart';
 
 import './providers/goals.dart';
 
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
         home: HomeScreen(),
         routes: {
           PlannerScreen.routeName: (ctx) => PlannerScreen(),
+          StatisticsScreen.routeName: (ctx) => StatisticsScreen(),
         },
       ),
     );

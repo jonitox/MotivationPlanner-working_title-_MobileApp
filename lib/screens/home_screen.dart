@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './planner_screen.dart';
+import './statistics_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   Widget itemButton(BuildContext ctx, String text, int idx) {
@@ -8,6 +9,8 @@ class HomeScreen extends StatelessWidget {
       onPressed: () {
         if (idx == 0) {
           Navigator.of(ctx).pushNamed(PlannerScreen.routeName);
+        } else {
+          Navigator.of(ctx).pushNamed(StatisticsScreen.routeName);
         }
       },
       child: Text(text),
